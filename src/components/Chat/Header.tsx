@@ -32,10 +32,9 @@ export const Header = () => {
     <div className="flex items-center gap-6 border-b bg-slate-100/80 dark:bg-slate-900/80 px-8 pr-12 h16">
       <Avatar className="size-11" isOnline={userIsOnline}>
         <AvatarImage src={chat?.user.avatar} alt={chat?.user.name} />
+        
+        <AvatarFallback>{chat?.user.name.slice(0, 2)}</AvatarFallback>
       </Avatar>
-
-      <AvatarFallback>{chat?.user.name.slice(0, 2)}</AvatarFallback>
-
       <div className="flex-1">
         <h1 className="font-bold text-ellipsis truncate max-w-96">
           {chat?.user.name}
